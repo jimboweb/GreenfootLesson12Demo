@@ -20,7 +20,6 @@ public class GreenWorld extends World
         ".......*.......",
         "****.******.***"
     };
-    
     Scoreboard sb;
     /**
      * Constructor for objects of class GreenWorld.
@@ -29,13 +28,9 @@ public class GreenWorld extends World
     public GreenWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        GreenfootImage bgImage = new GreenfootImage(1,1);
-        bgImage.setColor(Color.GREEN);
-        bgImage.drawRect(0, 0, 1, 1);
-        setBackground(bgImage);
+        super(600, 460, 1); 
+        this.sb = new Scoreboard();
         prepare();
-        drawMap();
     }
     
 
@@ -45,8 +40,17 @@ public class GreenWorld extends World
      */
     private void prepare()
     {
+        GreenfootImage bgImage = new GreenfootImage(1,1);
+        bgImage.setColor(Color.GREEN);
+        bgImage.drawRect(0, 0, 1, 1);
+        setBackground(bgImage);
+        addObject(sb, getWidth()/2,430);
+        drawMap();
         
-        
+    }
+    
+    public void addScore(int amount){
+        sb.addScore(amount);
     }
     
     private void drawMap(){

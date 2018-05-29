@@ -20,8 +20,6 @@ public class GreenWorld extends World
         ".......*.......",
         "****.******.***"
     };
-    
-    Scoreboard sb;
     /**
      * Constructor for objects of class GreenWorld.
      * 
@@ -37,7 +35,6 @@ public class GreenWorld extends World
         prepare();
         drawMap();
     }
-    
 
     /**
      * Prepare the world for the start of the program.
